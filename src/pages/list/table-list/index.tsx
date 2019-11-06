@@ -94,29 +94,10 @@ class TableList extends Component<TableListProps, TableListState> {
         return <span>{imsiStatus[val]}</span>;
       },
     },
-    // {
-    //   title: '',
-    //   dataIndex: 'callNo',
-    //   sorter: true,
-    //   align: 'right',
-    //   render: (val: string) => `${val} 万`,
-    //   // mark to display a total number
-    //   needTotal: true,
-    // },
+
     {
       title: 'Source Method',
       dataIndex: 'srcMethod',
-      // filters: [
-      //   {
-      //     text: srcStatus[0],
-      //     value: '0',
-      //   },
-
-      //   {
-      //     text: srcStatus[1],
-      //     value: '1',
-      //   },
-      // ],
       render(val: IStatusMapType) {
         return <span>{srcStatus[val]}</span>;
       },
@@ -142,12 +123,6 @@ class TableList extends Component<TableListProps, TableListState> {
     dispatch({
       type: 'listTableList/fetch',
     });
-    // fetch('http://10.45.16.254:8082/queryMobileNetworkCode', {
-    //   method: 'GET',
-    //   mode: 'cors',
-    // }).then(res => console.log(res.json()));
-    // .then(data => console.log(data))
-    // console.log(queryMobileNetworkCodeList)
   }
 
   handleStandardTableChange = (
@@ -346,10 +321,10 @@ class TableList extends Component<TableListProps, TableListState> {
         <div style={{ overflow: 'hidden' }}>
           <div style={{ float: 'right', marginBottom: 24 }}>
             <Button type="primary" htmlType="submit">
-              查询
+              search
             </Button>
             <Button style={{ marginLeft: 8 }} onClick={this.handleFormReset}>
-              重置
+              reset
             </Button>
           </div>
         </div>
